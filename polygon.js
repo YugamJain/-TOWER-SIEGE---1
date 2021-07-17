@@ -1,6 +1,6 @@
 class poly{
 
-    constructor(x, y, width, height) {
+    constructor(x, y, r) {
         var options = {
 
             isStatic: false,
@@ -10,11 +10,12 @@ class poly{
 
         }
 
-        this.body = Bodies.rectangle(x, y, width, height, options);
+        this.body = Bodies.circle(x, y,r, options);
+
+        this.image = loadImage("polygon.png");
 
         //NameSpacing(renaming width and height)
-        this.width = width;
-        this.height = height;
+        this.r = r;
         World.add(world, this.body);
     }
 
@@ -23,7 +24,8 @@ class poly{
         var pos = this.body.position;
         strokeWeight(2);
         fill("yellow");
-        rect(pos.x, pos.y, this.width, this.height);
+        imageMode(CENTER)
+        image(this.image,pos.x, pos.y, 40,40) ;
 
     }
 }

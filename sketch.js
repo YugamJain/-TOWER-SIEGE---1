@@ -73,7 +73,7 @@ function setup() {
 
   BlockBlue14 = new Box(320, 182, 20, 20);
 
-  polygon_1 = new poly(110, 100, 20, 20);
+  polygon_1 = new poly(110, 100, 20);
 
   sling = new SlingShot(polygon_1.body, { x: 70, y: 90 });
 
